@@ -11,15 +11,15 @@
     
 
 ## Components
-[] `App`
-    [] useEffect initial render
-    [] axios GET `/gallery` data
-    [] axios PUT `/gallery/like/:id` : update like count 
-        [] takes param of (idToUpdate)
-    [] store {list} in useState
-    [] RETURN:
-        [] pass {list} as prop to `GalleryList`
-        [] pass {putFx} as prop to `GalleryList`
+[x] `App`
+    [x] useEffect initial render
+    [x] axios GET `/gallery` data
+    [x] axios PUT `/gallery/like/:id` : update like count 
+        [x] takes param of (idToUpdate)
+    [x] store {list} in useState
+    [x] RETURN:
+        [x] pass {list} as prop to `GalleryList`
+        [x] pass {putFx} as prop to `GalleryList`
 
     [] `GalleryList`
         [] fx takes in {list, putFx} prop
