@@ -39,14 +39,14 @@ const galleryItems = [
         id: 6,
         title: Fairy, 
         path: `images/fairy.jpg`,
-        description: `Photo of a fairy. `,
+        description: `Photo of a fairy. They actually exist. I'm fairy certain.`,
         likes:0
     },
     {
         id: 7,
         title: Leprechaun, 
         path: `images/leprechaun.jpg`,
-        description: `Photo of a leprechaun. `,
+        description: `Photo of a leprechaun. Where did they manage to get the gold from anyways?`,
         likes:0
     },
 ];

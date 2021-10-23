@@ -1,13 +1,13 @@
 ### Base Mode ###
 
 ## Files setup
-[] Add images to public/images
-    [] edit `server/modules/data.js` to include:
-        [] `id`
-        [] `title`
-        [] `description`
-        [] `path`
-        [] `likes`
+[x] Add images to public/images
+    [x] edit `server/modules/data.js` to include:
+        [x] `id`
+        [x] `title`
+        [x] `description`
+        [x] `path`
+        [x] `likes`
     
 
 ## Components
