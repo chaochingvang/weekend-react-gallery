@@ -1,9 +1,15 @@
 import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 
-function GalleryList() {
+function GalleryList({galleryList, updateLikeCount}) {
     return (<>
-        <h1>Gallery List Goes Here</h1>
-        <GalleryItem />
+        <span className="galleryList">
+            {galleryList.map((galleryItem) => (
+                <GalleryItem
+                    updateLikeCount={updateLikeCount}
+                    galleryItem={galleryItem}
+                />
+        ))}
+        </span>
     </>);
 }
 export default GalleryList;

@@ -21,12 +21,12 @@
         [x] pass {list} as prop to `GalleryList`
         [x] pass {putFx} as prop to `GalleryList`
 
-    [] `GalleryList`
-        [] fx takes in {list, putFx} prop
-        [] RETURN:
-            [] render list with list.map({item} => ())
-            [] send {item} as prop to `GalleryItem`
-            [] pass {putFx} as prop to `GalleryItem`
+    [x] `GalleryList`
+        [x] fx takes in {list, putFx} prop
+        [x] RETURN:
+            [x] render list with list.map({item} => ())
+            [x] send {item} as prop to `GalleryItem`
+            [x] pass {putFx} as prop to `GalleryItem`
 
 
         [] `GalleryItem`
