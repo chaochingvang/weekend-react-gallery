@@ -65,6 +65,18 @@ function App() {
     });
   }
 
+  const deleteCreature = (creature) => {
+    axios({
+      method: `DELETE`,
+      url: `/gallery/${creature.id}`
+    }).then((response) => {
+      console.log(`successfully deleted!`);
+      getGalleryList();
+    }).catch((error) => {
+      console.log(`ERROR! Unable to delete.`, error);
+    });
+  }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -75,6 +87,7 @@ function App() {
           galleryList={galleryList}
           updateLikeCount={updateLikeCount}
           updateImgStatus={updateImgStatus}
+          deleteCreature={deleteCreature}
         />
       </div>
     );

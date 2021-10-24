@@ -93,4 +93,26 @@ router.post(`/`, (req, res) => {
         });
 })
 
+router.delete(`/:id`, (req, res) => {
+    let id = req.params.id;
+
+    let queryText = `
+        DELETE FROM "galleryList"
+        WHERE "id" = $1;
+    `;
+
+    let values = [id];
+
+    pool.query(queryText, values)
+        .then((result) => {
+            console.log(`Deleted ID #`, id);
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`ERROR! Unable to delete item`, error);
+            res.sendStatus(500);
+        });
+})
+
+
 module.exports = router;
