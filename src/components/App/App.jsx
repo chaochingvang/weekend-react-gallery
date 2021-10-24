@@ -4,6 +4,7 @@ const useEffect = React.useEffect;
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList.jsx';
+import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 
 function App() {
   useEffect(() => {
@@ -56,6 +57,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of Mythical Creatures</h1>
         </header>
+        <GalleryForm />
         <GalleryList
           galleryList={galleryList}
           updateLikeCount={updateLikeCount}
