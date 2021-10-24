@@ -12,27 +12,30 @@ function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem }) {
 
     const showImage = (
         <img
-            onClick={handleImgClick}
             className="galleryItem"
             src={galleryItem.path}
         />);
-    
+
     const showDescription = (
-        <p onClick={handleImgClick}>
+        <p className="descriptionBorder">
             {galleryItem.description}
         </p>
     );
-    
+
     console.log(galleryItem.imgStatus);
 
     return (<>
         <div className="galleryItemContainer">
+        <div
+            className="galleryImgContainer"
+            onClick={handleImgClick}>
             {galleryItem.imgStatus
                 ? showImage
                 : showDescription}
         </div>
-            <div><button onClick={() => updateLikeCount(galleryItem)}>LIKE</button></div>
-            <p>{galleryItem.likes} love this!</p>
+        <div><button onClick={() => updateLikeCount(galleryItem)}>LIKE</button></div>
+        <p>{galleryItem.likes} love this!</p>
+    </div>
 
     </>);
 }

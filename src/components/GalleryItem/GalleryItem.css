@@ -2,3 +2,21 @@
     height: 200px;
     width: 200px;
 }
+
+.galleryImgContainer {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+
+.galleryImgContainer p {
+    margin: 20px;
+    border: solid grey;
+}
+
+.galleryItemContainer {
+    height: 275px;
+    width: 275px;
+    text-align: center;
+}
