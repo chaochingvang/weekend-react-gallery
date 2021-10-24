@@ -16,6 +16,17 @@ router.put('/like/:id', (req, res) => {
     res.sendStatus(200);
 }); // END PUT Route
 
+router.put(`/status/:id`, (req, res) => {
+    const galleryId = req.params.id;
+    const imgStatus = req.body.imgStatus;
+    for (const galleryItem of galleryItems) {
+        if (galleryItem.id == galleryId) {
+            galleryItem.imgStatus = imgStatus;
+        }
+    }
+    res.sendStatus(200);
+}); // END update status img PUT
+
 // GET Route
 router.get('/', (req, res) => {
     res.send(galleryItems);

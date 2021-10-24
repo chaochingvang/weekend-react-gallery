@@ -30,10 +30,10 @@
 
 
         [] `GalleryItem`
-            [] fx takes in {item, putFx} prop
-            [] 100px x 100px pic
-            [] like btn
-                [] run {putFx}
+            [x] fx takes in {item, putFx} prop
+            [x] 100px x 100px pic
+            [x] like btn
+                [x] run {putFx}
             [] conditional rendering on click
                 [] shows description in 100x100px div instead of image
 

@@ -17,7 +17,7 @@ function App() {
       method: `GET`,
       url: `/gallery`
     }).then((response) => {
-      console.log(`app.jsx GET /gallery successful`, response.data);
+      console.log(`app.jsx GET /gallery successful`);
       setGalleryList(response.data);
     }).catch((error) => {
       console.log(`Error! app.jsx GET /gallery fail!`, error);
@@ -36,6 +36,21 @@ function App() {
     });
   }
 
+  const updateImgStatus = (itemToUpdate) => {
+    axios({
+      method: `PUT`,
+      url: `gallery/status/${itemToUpdate.id}`,
+      data: {
+        imgStatus: itemToUpdate.imgStatus
+      }
+    }).then((response) => {
+      console.log(`able to update imgStatus! Success!`);
+      getGalleryList();
+    }).catch((error) => {
+      console.log(`ERROR! unable to update imgStatus.`, error);
+    })
+  }
+
     return (
       <div className="App">
         <header className="App-header">
@@ -43,7 +58,8 @@ function App() {
         </header>
         <GalleryList
           galleryList={galleryList}
-          updateLikeCount={updateLikeCount}  
+          updateLikeCount={updateLikeCount}
+          updateImgStatus={updateImgStatus}
         />
       </div>
     );
