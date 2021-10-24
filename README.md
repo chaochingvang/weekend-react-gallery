@@ -82,7 +82,7 @@ The project was made possible with the help of friends, families and especially 
 
 
 README.md created using template created by John Turner.
-<a href="https://johnturner4004.github.io/readme-generator/" />
+<a href="https://johnturner4004.github.io/readme-generator/">README.md generator link</a>
 
 ## Contacts
 
