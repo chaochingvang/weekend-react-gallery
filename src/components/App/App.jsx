@@ -53,6 +53,20 @@ function App() {
   }
 
   const addNewCreature = (newCreature) => {
+    //user input validation
+    if (newCreature.title === ``) {
+      alert(`Please enter in a name for your creature.`);
+      return;
+    }
+    else if (newCreature.description === ``) {
+      alert(`Please enter in a description for your creature.`);
+      return;
+    }
+    else if (newCreature.path === ``) {
+      alert(`Please enter in a url path for your creature image.`)
+      return;
+    }
+
     axios({
       method: `POST`,
       url: `/gallery`,
