@@ -29,13 +29,13 @@
             [x] pass {putFx} as prop to `GalleryItem`
 
 
-        [] `GalleryItem`
+        [x] `GalleryItem`
             [x] fx takes in {item, putFx} prop
             [x] 100px x 100px pic
             [x] like btn
                 [x] run {putFx}
-            [] conditional rendering on click
-                [] shows description in 100x100px div instead of image
+            [x] conditional rendering on click
+                [x] shows description in 100x100px div instead of image
 
 
 ### STRETCH MODE ### 
