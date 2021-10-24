@@ -23,8 +23,8 @@ This project allows for users to add, delete and update items on the DOM using J
 
 ## Screenshots
 
-<img src="./wireframes/screenshot_1.png" />
-<img src="./wireframes/screenshot_2.png" />
+![Screenshot 1](wireframes/screenshot_1.png)
+![Screenshot 2](wireframes/screenshot_2.png)
 
 ## Built With
 
