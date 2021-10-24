@@ -7,12 +7,14 @@ import GalleryList from '../GalleryList/GalleryList.jsx';
 import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 
 function App() {
+  //initial render
   useEffect(() => {
     getGalleryList();
   }, []);
 
   const [galleryList, setGalleryList] = useState([]);
 
+  //GET method
   const getGalleryList = () => {
     axios({
       method: `GET`,
@@ -23,8 +25,9 @@ function App() {
     }).catch((error) => {
       console.log(`Error! app.jsx GET /gallery fail!`, error);
     });
-  }
+  }//end GET method
 
+  //PUT update like count method
   const updateLikeCount = (itemToUpdate) => {
     axios({
       method: `PUT`,
@@ -35,8 +38,9 @@ function App() {
     }).catch((error) => {
       console.log(`Error! app.jsx PUT /gallery/like/${itemToUpdate.id} fail!`);
     });
-  }
+  }//end PUT update like count
 
+  //PUT show image or description
   const updateImgStatus = (itemToUpdate) => {
     axios({
       method: `PUT`,
@@ -50,8 +54,9 @@ function App() {
     }).catch((error) => {
       console.log(`ERROR! unable to update imgStatus.`, error);
     })
-  }
+  }//end PUT show image or description
 
+  //POST add creature
   const addNewCreature = (newCreature) => {
     //user input validation
     if (newCreature.title === ``) {
@@ -77,8 +82,9 @@ function App() {
     }).catch((error) => {
       console.log(`ERROR! unable to add.`, error);
     });
-  }
+  }// end POST add creature
 
+  //DELETE delete creature
   const deleteCreature = (creature) => {
     axios({
       method: `DELETE`,
@@ -89,7 +95,7 @@ function App() {
     }).catch((error) => {
       console.log(`ERROR! Unable to delete.`, error);
     });
-  }
+  }// end DELETE delete creature
 
     return (
       <div className="App">

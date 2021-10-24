@@ -10,6 +10,7 @@ router.put('/like/:id', (req, res) => {
 
     let id = req.params.id;
 
+    //increase like count on db where ID matches 
     let queryText = `
         UPDATE "galleryList"
         SET "likes" = "likes" + 1
@@ -34,6 +35,7 @@ router.put(`/status/:id`, (req, res) => {
 
     let id = req.params.id;
 
+    //update on db where ID matches and set imgStatus to opposite boolean value
     let queryText = `
         UPDATE "galleryList"
         SET "imgStatus" = NOT "imgStatus"
@@ -72,6 +74,8 @@ router.get('/', (req, res) => {
 
 }); // END GET Route
 
+
+// POST add new creature
 router.post(`/`, (req, res) => {
     let newCreatureInput = req.body;
 
@@ -82,10 +86,12 @@ router.post(`/`, (req, res) => {
 
     let values = [newCreatureInput.title, newCreatureInput.description, newCreatureInput.path];
 
-    if ((newCreatureInput.title === ``) || (newCreatureInput.description === ``) || (newCreatureInput.path === ``)){
+    //if any of the inputs are blank, console log an error and send error status
+    if ((newCreatureInput.title === ``) || (newCreatureInput.description === ``) || (newCreatureInput.path === ``)) {
         console.log(`Error. Please enter in valid data and leave no field blank`);
         res.sendStatus(500);
     }
+    //other wise post results to db
     else {
         pool.query(queryText, values)
             .then((result) => {
@@ -97,8 +103,9 @@ router.post(`/`, (req, res) => {
                 res.sendStatus(500);
             });
     }
-})
+}); // end POST add new creature
 
+// DELETE creature method
 router.delete(`/:id`, (req, res) => {
     let id = req.params.id;
 
@@ -118,7 +125,7 @@ router.delete(`/:id`, (req, res) => {
             console.log(`ERROR! Unable to delete item`, error);
             res.sendStatus(500);
         });
-})
+}); //end DELETE creature
 
 
 module.exports = router;

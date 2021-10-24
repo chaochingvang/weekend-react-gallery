@@ -1,21 +1,27 @@
 import { useState } from "react";
 
-function GalleryForm({addNewCreature}) {
+function GalleryForm({ addNewCreature }) {
+    
+    //local states for inputs
     const [nameInput, setNameInput] = useState(``);
     const [descriptionInput, setDescriptionInput] = useState(``);
     const [pathInput, setPathInput] = useState(``);
 
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
+        //new object with input values
         const newCreature = {
             title: nameInput,
             description: descriptionInput,
             path: pathInput
         }
 
+        //addNewCreature with input values
         addNewCreature(newCreature);
 
+        //reset input values
         setNameInput(``);
         setDescriptionInput(``);
         setPathInput(``);
