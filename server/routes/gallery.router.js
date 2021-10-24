@@ -82,6 +82,8 @@ router.post(`/`, (req, res) => {
 
     let values = [newCreatureInput.title, newCreatureInput.description, newCreatureInput.path];
 
+
+
     pool.query(queryText, values)
         .then((result) => {
             console.log(`Successfully added new creature to db`);
