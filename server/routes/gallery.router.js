@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
@@ -18,19 +19,33 @@ router.put('/like/:id', (req, res) => {
 }); // END PUT Route
 
 router.put(`/status/:id`, (req, res) => {
-    const galleryId = req.params.id;
-    const imgStatus = req.body.imgStatus;
-    for (const galleryItem of galleryItems) {
-        if (galleryItem.id == galleryId) {
-            galleryItem.imgStatus = imgStatus;
-        }
-    }
-    res.sendStatus(200);
+
+    let id = req.params.id;
+
+    let queryText = `
+        UPDATE "galleryList"
+        SET "imgStatus" = NOT "imgStatus"
+        WHERE "id" = $1;
+    `;
+
+    let values = [id];
+
+    pool.query(queryText, values)
+        .then((result) => {
+            console.log(`flipped imgStatus for ID # `, id);
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`Unable to update imgStatus!`, error);
+            res.sendStatus(500);
+        });
+
 }); // END update status img PUT
 
 // GET Route
 router.get('/', (req, res) => {
-    let queryText = `SELECT * FROM "galleryList";`;
+    let queryText = `SELECT * FROM "galleryList"
+        ORDER BY "id";`;
 
     pool.query(queryText)
         .then((result) => {
