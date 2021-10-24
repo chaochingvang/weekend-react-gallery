@@ -3,7 +3,7 @@
 CREATE TABLE "galleryList"(
 "id" SERIAL PRIMARY KEY,
 "title" VARCHAR(64) NOT NULL, 
-"path" VARCHAR(255) NOT NULL,
+"path" TEXT NOT NULL,
 "description" VARCHAR(255) NOT NULL,
 "likes" INT DEFAULT 0,
 "imgStatus" BOOLEAN DEFAULT TRUE

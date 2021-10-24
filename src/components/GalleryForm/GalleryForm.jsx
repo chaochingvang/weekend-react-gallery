@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function GalleryForm() {
+function GalleryForm({addNewCreature}) {
     const [nameInput, setNameInput] = useState(``);
     const [descriptionInput, setDescriptionInput] = useState(``);
     const [pathInput, setPathInput] = useState(``);
@@ -9,12 +9,12 @@ function GalleryForm() {
         event.preventDefault();
 
         const newCreature = {
-            name: nameInput,
+            title: nameInput,
             description: descriptionInput,
             path: pathInput
         }
 
-        //POSTMETHOD w/ newCreature
+        addNewCreature(newCreature);
 
         setNameInput(``);
         setDescriptionInput(``);

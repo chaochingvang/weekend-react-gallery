@@ -52,12 +52,25 @@ function App() {
     })
   }
 
+  const addNewCreature = (newCreature) => {
+    axios({
+      method: `POST`,
+      url: `/gallery`,
+      data: newCreature
+    }).then((response) => {
+      console.log(`successfully added!`);
+      getGalleryList();
+    }).catch((error) => {
+      console.log(`ERROR! unable to add.`, error);
+    });
+  }
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of Mythical Creatures</h1>
         </header>
-        <GalleryForm />
+        <GalleryForm addNewCreature={addNewCreature}/>
         <GalleryList
           galleryList={galleryList}
           updateLikeCount={updateLikeCount}
