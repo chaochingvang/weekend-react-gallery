@@ -12,7 +12,7 @@ function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem }) {
 
     const showImage = (
         <img
-            className="galleryItem"
+            className="galleryImg"
             src={galleryItem.path}
         />);
 
@@ -25,18 +25,22 @@ function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem }) {
     console.log(galleryItem.imgStatus);
 
     return (<>
+        <div className="data">
         <div className="galleryItemContainer">
-        <div
-            className="galleryImgContainer"
-            onClick={handleImgClick}>
-            {galleryItem.imgStatus
-                ? showImage
-                : showDescription}
+            <div
+                className="galleryImgContainer"
+                onClick={handleImgClick}>
+                {galleryItem.imgStatus
+                    ? showImage
+                    : showDescription}
+            </div>
+            <div className="imgFooter">
+                <button onClick={() => updateLikeCount(galleryItem)}>LIKE</button>
+                <p>{galleryItem.likes} love this!</p>
+            </div>
         </div>
-        <div><button onClick={() => updateLikeCount(galleryItem)}>LIKE</button></div>
-        <p>{galleryItem.likes} love this!</p>
-    </div>
-
+        <span className="spacer"></span>
+        </div>
     </>);
 }
 export default GalleryItem;

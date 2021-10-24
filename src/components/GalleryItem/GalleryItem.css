@@ -1,22 +1,33 @@
-.galleryItem {
+.galleryImg {
     height: 200px;
     width: 200px;
+    border-radius: 25px;
 }
 
 .galleryImgContainer {
-    width: 200px;
     height: 200px;
+    width: 200px;
+    border-radius: 25px;
+    border-bottom: solid black;
+    position: absolute;
     margin: auto;
 }
 
-
-.galleryImgContainer p {
-    margin: 20px;
-    border: solid grey;
+.galleryItemContainer {
+    border: solid black;
+    border-radius: 25px;
+    height: 265px;
+    width: 200px;
+    text-align: center;
 }
 
-.galleryItemContainer {
-    height: 275px;
-    width: 275px;
-    text-align: center;
+.imgFooter {
+    margin-top: 205px;
+}
+
+.spacer {
+    margin: auto;
+}
+.data {
+    margin: 20px;
 }
