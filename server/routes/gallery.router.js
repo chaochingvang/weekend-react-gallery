@@ -30,7 +30,19 @@ router.put(`/status/:id`, (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
-    res.send(galleryItems);
+    let queryText = `SELECT * FROM "galleryList";`;
+
+    pool.query(queryText)
+        .then((result) => {
+            console.log(`Successfully sent data from db`);
+            res.send(result.rows);
+        })
+        .catch((error) => {
+            console.log(`ERROR! Unable to GET query`, error);
+            res.sendStatus(500);
+        })
+
+
 }); // END GET Route
 
 module.exports = router;
