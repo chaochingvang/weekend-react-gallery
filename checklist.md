@@ -53,18 +53,18 @@ Create separate branches for each objective
     [] axios POST `/gallery` in `App.jsx`
         [] takes a param of (itemToAdd)
     [] takes in `postFx` from `App.js`
-    [] useState for each input
+    [x] useState for each input
     [] `handleSubmitFx`
         [] const `newItem` = state values
         [] run `postFx` with `newItem` as param
         [] clear inputs by setting inputs value as state value
             []setState(``) for all input
     [] RETURN: 
-        [] create html form
-            [] name input
-            [] description input
-            [] path input
-            [] submit button
+        [x] create html form
+            [x] name input
+            [x] description input
+            [x] path input
+            [x] submit button
         [] onSubmit runs `postFx`
 [] Delete option in `GalleryItem`
     [] create DELETE `/:id` in `gallery.router.js`

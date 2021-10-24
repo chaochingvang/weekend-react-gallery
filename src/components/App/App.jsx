@@ -4,6 +4,7 @@ const useEffect = React.useEffect;
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList.jsx';
+import GalleryForm from '../GalleryForm/GalleryForm.jsx';
 
 function App() {
   useEffect(() => {
@@ -51,11 +52,25 @@ function App() {
     })
   }
 
+  const addNewCreature = (newCreature) => {
+    axios({
+      method: `POST`,
+      url: `/gallery`,
+      data: newCreature
+    }).then((response) => {
+      console.log(`successfully added!`);
+      getGalleryList();
+    }).catch((error) => {
+      console.log(`ERROR! unable to add.`, error);
+    });
+  }
+
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of Mythical Creatures</h1>
         </header>
+        <GalleryForm addNewCreature={addNewCreature}/>
         <GalleryList
           galleryList={galleryList}
           updateLikeCount={updateLikeCount}

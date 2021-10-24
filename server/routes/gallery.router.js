@@ -4,9 +4,8 @@ const router = express.Router();
 const galleryItems = require('../modules/gallery.data');
 const pool = require('../modules/pool.js');
 
-// DO NOT MODIFY THIS FILE FOR BASE MODE
 
-// PUT Route
+// PUT update like count Route
 router.put('/like/:id', (req, res) => {
 
     let id = req.params.id;
@@ -29,7 +28,7 @@ router.put('/like/:id', (req, res) => {
             res.sendStatus(500);
         })
 
-}); // END PUT Route
+}); // END PUT update like count Route
 
 router.put(`/status/:id`, (req, res) => {
 
@@ -72,5 +71,26 @@ router.get('/', (req, res) => {
 
 
 }); // END GET Route
+
+router.post(`/`, (req, res) => {
+    let newCreatureInput = req.body;
+
+    let queryText = `
+        INSERT INTO "galleryList" ("title", "description", "path")
+        VALUES ($1, $2, $3);
+    `;
+
+    let values = [newCreatureInput.title, newCreatureInput.description, newCreatureInput.path];
+
+    pool.query(queryText, values)
+        .then((result) => {
+            console.log(`Successfully added new creature to db`);
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`ERROR! Unable to add new creature`, error);
+            res.sendStatus(500);
+        });
+})
 
 module.exports = router;
