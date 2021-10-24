@@ -41,13 +41,13 @@
 ### STRETCH MODE ### 
 Create separate branches for each objective
 
-[] Move gallery.data.js into db
-    [] db name: `react_gallery`
-        [] title
-        [] description
-        [] path
-        [] like
-    [] include `database.sql` file in project folder
+[x] Move gallery.data.js into db
+    [x] db name: `react_gallery`
+        [x] title
+        [x] description
+        [x] path
+        [x] like
+    [x] include `database.sql` file in project folder
 [] Add `GalleryForm` component
     [] create POST `/` in `gallery.router.js`
     [] axios POST `/gallery` in `App.jsx`
