@@ -82,17 +82,21 @@ router.post(`/`, (req, res) => {
 
     let values = [newCreatureInput.title, newCreatureInput.description, newCreatureInput.path];
 
-
-
-    pool.query(queryText, values)
-        .then((result) => {
-            console.log(`Successfully added new creature to db`);
-            res.sendStatus(200);
-        })
-        .catch((error) => {
-            console.log(`ERROR! Unable to add new creature`, error);
-            res.sendStatus(500);
-        });
+    if ((newCreatureInput.title === ``) || (newCreatureInput.description === ``) || (newCreatureInput.path === ``)){
+        console.log(`Error. Please enter in valid data and leave no field blank`);
+        res.sendStatus(500);
+    }
+    else {
+        pool.query(queryText, values)
+            .then((result) => {
+                console.log(`Successfully added new creature to db`);
+                res.sendStatus(200);
+            })
+            .catch((error) => {
+                console.log(`ERROR! Unable to add new creature`, error);
+                res.sendStatus(500);
+            });
+    }
 })
 
 router.delete(`/:id`, (req, res) => {
