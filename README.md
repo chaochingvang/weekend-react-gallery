@@ -36,14 +36,14 @@ Softwares used in creating this project includes:
 
 - Visual Studio Code
 - PostgreSQL
-- POSTICO
+- Postico
 - Postman
 
 The project will require alterations and possibly additional lines of codes if used with softwares that are not listed above. 
 
 ### Installation
 
-To run this project, the user should fork the repository onto their own GitHub repository. In the user's repository, go ahead and copy link and clone onto local system. The project will then be installed using npm:
+To run this project, the user should fork the repository onto their own GitHub repository. In the user's repository, go ahead and copy link and clone onto local system. The project will then be installed using npm by navigating to folder:
 
 - $ cd ../weekend-react-gallery
 - $ npm install
