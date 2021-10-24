@@ -1,14 +1,21 @@
 import './GalleryItem.css';
 
-function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem }) {
+function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem, deleteCreature }) {
 
     const handleImgClick = () => {
-        galleryItem.imgStatus = !galleryItem.imgStatus;
-        console.log(`CLICKED`, galleryItem.imgStatus);
-
         updateImgStatus(galleryItem);
     }
 
+    const handleDelete = () => {
+        let confirmation = confirm(`Are you sure you want to delete ${galleryItem.title}?`)
+
+        if (confirmation === true) {
+            deleteCreature(galleryItem);
+        }
+        else {
+            return;
+        }
+    }
 
     const showImage = (
         <img
@@ -22,7 +29,6 @@ function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem }) {
         </p>
     );
 
-    console.log(galleryItem.imgStatus);
 
     return (<>
         <div className="data">
@@ -35,7 +41,8 @@ function GalleryItem({ updateImgStatus, updateLikeCount, galleryItem }) {
                     : showDescription}
             </div>
             <div className="imgFooter">
-                <button onClick={() => updateLikeCount(galleryItem)}>LIKE</button>
+                    <button onClick={() => updateLikeCount(galleryItem)}>LIKE</button>
+                    <button onClick={() => handleDelete()}>DELETE</button>
                 <p>{galleryItem.likes} love this!</p>
             </div>
         </div>

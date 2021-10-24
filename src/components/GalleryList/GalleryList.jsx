@@ -1,7 +1,7 @@
 import GalleryItem from "../GalleryItem/GalleryItem.jsx";
 import './GalleryList.css'
 
-function GalleryList({galleryList, updateLikeCount, updateImgStatus}) {
+function GalleryList({galleryList, updateLikeCount, updateImgStatus, deleteCreature}) {
     return (<>
         <span className="galleryList">
             {galleryList.map((galleryItem) => (
@@ -10,6 +10,7 @@ function GalleryList({galleryList, updateLikeCount, updateImgStatus}) {
                     updateLikeCount={updateLikeCount}
                     updateImgStatus={updateImgStatus}
                     galleryItem={galleryItem}
+                    deleteCreature={deleteCreature}
                 />
         ))}
         </span>

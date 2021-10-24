@@ -48,28 +48,28 @@ Create separate branches for each objective
         [x] path
         [x] like
     [x] include `database.sql` file in project folder
-[] Add `GalleryForm` component
-    [] create POST `/` in `gallery.router.js`
-    [] axios POST `/gallery` in `App.jsx`
-        [] takes a param of (itemToAdd)
-    [] takes in `postFx` from `App.js`
+[x] Add `GalleryForm` component
+    [x] create POST `/` in `gallery.router.js`
+    [x] axios POST `/gallery` in `App.jsx`
+        [x] takes a param of (itemToAdd)
+    [x] takes in `postFx` from `App.js`
     [x] useState for each input
     [] `handleSubmitFx`
-        [] const `newItem` = state values
-        [] run `postFx` with `newItem` as param
-        [] clear inputs by setting inputs value as state value
-            []setState(``) for all input
-    [] RETURN: 
+        [x] const `newItem` = state values
+        [x] run `postFx` with `newItem` as param
+        [x] clear inputs by setting inputs value as state value
+            [x]setState(``) for all input
+    [x] RETURN: 
         [x] create html form
             [x] name input
             [x] description input
             [x] path input
             [x] submit button
-        [] onSubmit runs `postFx`
-[] Delete option in `GalleryItem`
-    [] create DELETE `/:id` in `gallery.router.js`
-    [] axios DELETE `/gallery/:id` in `App.jsx`
-        [] takes param of (itemToDelete)
-    [] takes in `deleteFx` from `GalleryList` which takes from `App.jsx`
+        [x] onSubmit runs `postFx`
+[x] Delete option in `GalleryItem`
+    [x] create DELETE `/:id` in `gallery.router.js`
+    [x] axios DELETE `/gallery/:id` in `App.jsx`
+        [x] takes param of (itemToDelete)
+    [x] takes in `deleteFx` from `GalleryList` which takes from `App.jsx`
 [] Material-UI styling
 [] implement uppy for image upload
